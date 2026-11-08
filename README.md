@@ -39,7 +39,7 @@ No Node package install is needed: `verify.mjs` uses Node built-ins only (Node 1
 
 | Item | Value | Source |
 |---|---|---|
-| Commits | 4 | `git rev-list --count HEAD` |
+| Commits | 5 (at `f02791a`) | `git rev-list --count f02791a` |
 | Last commit | 2026-11-08 | `git log -1 --date=short` |
 | Packs | 3 | `index.json` |
 | Rules | 34 (14 / 10 / 10) | `packs/rules/*/0.1/rules/*.json` |
@@ -153,7 +153,7 @@ node packs/rules/basic-commit/0.1/verify.mjs
 
 | 项 | 实测值 | 取值来源 |
 |---|---|---|
-| 提交次数 | 4 | `git rev-list --count HEAD` |
+| 提交次数 | 5（截至 `f02791a`） | `git rev-list --count f02791a` |
 | 最近提交 | 2026-11-08 | `git log -1 --date=short` |
 | 包数 | 3 | `index.json` |
 | 规则数 | 34（14／10／10） | `packs/rules/*/0.1/rules/*.json` |
