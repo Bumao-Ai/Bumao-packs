@@ -1,0 +1,8 @@
+{
+  "case_id": "no-empty-directories",
+  "expect_fail": "basic-repo/no-empty-directories",
+  "setup": "Create an empty directory and leave it with no files at any depth.",
+  "mutations": {
+    "mkdir": ["empty-notes"]
+  }
+}

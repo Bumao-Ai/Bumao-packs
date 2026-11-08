@@ -1,0 +1,11 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-repo/no-large-files",
+  "title": "No file exceeds 256 KiB",
+  "severity": "major",
+  "check": {
+    "type": "max_file_size",
+    "max_bytes": 262144
+  },
+  "message": "File {path} is {size} bytes, over the {limit}-byte limit; keep bulk assets out of the repository."
+}

@@ -1,0 +1,14 @@
+{
+  "case_id": "no-large-files",
+  "expect_fail": "basic-repo/no-large-files",
+  "setup": "Materialize assets/blob.bin at 270000 bytes, above the 262144-byte limit.",
+  "mutations": {
+    "write_bytes": [
+      {
+        "path": "assets/blob.bin",
+        "size": 270000,
+        "fill": "x"
+      }
+    ]
+  }
+}

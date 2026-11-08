@@ -1,0 +1,8 @@
+{
+  "case_id": "required-file-license",
+  "expect_fail": "basic-repo/required-file-license",
+  "setup": "Delete LICENSE while leaving a valid README declaration, so only the missing-file rule can catch it.",
+  "mutations": {
+    "delete": ["LICENSE"]
+  }
+}

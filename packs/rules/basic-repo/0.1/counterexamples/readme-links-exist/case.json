@@ -1,0 +1,10 @@
+{
+  "case_id": "readme-links-exist",
+  "expect_fail": "basic-repo/readme-links-exist",
+  "setup": "Add a relative link to docs/design.md in README.md without creating the target.",
+  "mutations": {
+    "write": {
+      "README.md": "# Example Project\n\nA small, valid sample repository used as the passing baseline for the\nbasic-repo rules.\n\n## Layout\n\nThe entry point is `src/app.py`.\n\n## Links\n\n- [Security policy](SECURITY.md)\n- [License](LICENSE)\n- [Notice](NOTICE)\n- [Design notes](docs/design.md)\n\n## License\n\nMIT\n"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-repo/required-files-non-empty",
+  "title": "Required files are not empty",
+  "severity": "major",
+  "check": {
+    "type": "file_min_bytes",
+    "files": ["README.md", "LICENSE", "NOTICE", "SECURITY.md"],
+    "min_bytes": 1
+  },
+  "message": "Required file {path} is empty; a placeholder file tells a reader nothing."
+}

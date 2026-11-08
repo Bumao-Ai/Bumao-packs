@@ -1,0 +1,11 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-repo/readme-mentioned-files-exist",
+  "title": "Backticked file paths in README.md exist",
+  "severity": "minor",
+  "check": {
+    "type": "readme_paths_exist",
+    "readme": "README.md"
+  },
+  "message": "README.md mentions {path}, but the file does not exist."
+}

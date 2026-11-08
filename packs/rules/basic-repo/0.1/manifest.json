@@ -1,0 +1,30 @@
+{
+  "schema": "bumao.pack/v1",
+  "pack_id": "basic-repo",
+  "name": "Starter repository pack",
+  "version": "0.1",
+  "kind": "rules",
+  "requires_contract": "bumao.rule-pack/v1",
+  "description": "Fourteen machine-checkable starter rules for a clean repository: required files, directory naming, empty directories, license consistency, README references, temporary files, large files, and secret-looking strings.",
+  "license": "MIT",
+  "rule_count": 14,
+  "counterexample_count": 14,
+  "rule_files": [
+    "rules/01-required-file-readme.json",
+    "rules/02-required-file-license.json",
+    "rules/03-required-file-notice.json",
+    "rules/04-required-file-security.json",
+    "rules/05-required-files-non-empty.json",
+    "rules/06-directory-naming.json",
+    "rules/07-no-empty-directories.json",
+    "rules/08-license-declared.json",
+    "rules/09-license-file-matches.json",
+    "rules/10-readme-links-exist.json",
+    "rules/11-readme-mentioned-files-exist.json",
+    "rules/12-no-temporary-files.json",
+    "rules/13-no-large-files.json",
+    "rules/14-no-secrets.json"
+  ],
+  "counterexample_dir": "counterexamples",
+  "verify": "verify.mjs"
+}

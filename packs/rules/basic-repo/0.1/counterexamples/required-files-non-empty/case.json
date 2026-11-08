@@ -1,0 +1,10 @@
+{
+  "case_id": "required-files-non-empty",
+  "expect_fail": "basic-repo/required-files-non-empty",
+  "setup": "Replace NOTICE with a zero-byte file; the file exists but carries no content.",
+  "mutations": {
+    "write": {
+      "NOTICE": ""
+    }
+  }
+}

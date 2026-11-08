@@ -1,0 +1,11 @@
+{
+  "case_id": "required-file-readme",
+  "expect_fail": "basic-repo/required-file-readme",
+  "setup": "Rename README.md to lowercase readme.md so a case-sensitive existence check must fire.",
+  "mutations": {
+    "delete": ["README.md"],
+    "write": {
+      "readme.md": "# example project\n"
+    }
+  }
+}

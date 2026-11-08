@@ -1,0 +1,11 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-repo/readme-links-exist",
+  "title": "Relative links in README.md point to real files",
+  "severity": "major",
+  "check": {
+    "type": "readme_links_exist",
+    "readme": "README.md"
+  },
+  "message": "README.md links to {path}, but that target does not exist."
+}

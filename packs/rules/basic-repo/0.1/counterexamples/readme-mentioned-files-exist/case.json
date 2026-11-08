@@ -1,0 +1,10 @@
+{
+  "case_id": "readme-mentioned-files-exist",
+  "expect_fail": "basic-repo/readme-mentioned-files-exist",
+  "setup": "Mention docs/plans/missing.md in backticks inside README.md without creating the file.",
+  "mutations": {
+    "write": {
+      "README.md": "# Example Project\n\nA small, valid sample repository used as the passing baseline for the\nbasic-repo rules.\n\n## Layout\n\nThe entry point is `src/app.py`.\n\nSee `docs/plans/missing.md` before changing the layout.\n\n## Links\n\n- [Security policy](SECURITY.md)\n- [License](LICENSE)\n- [Notice](NOTICE)\n\n## License\n\nMIT\n"
+    }
+  }
+}

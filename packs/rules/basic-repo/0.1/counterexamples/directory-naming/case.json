@@ -1,0 +1,11 @@
+{
+  "case_id": "directory-naming",
+  "expect_fail": "basic-repo/directory-naming",
+  "setup": "Create a directory named Docs, which fails lowercase kebab-case.",
+  "mutations": {
+    "mkdir": ["Docs"],
+    "write": {
+      "Docs/readme.md": "notes\n"
+    }
+  }
+}

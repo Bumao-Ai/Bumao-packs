@@ -1,0 +1,20 @@
+{
+  "schema": "bumao.pack-index/v1",
+  "updated_at": "2026-11-08",
+  "packs": [
+    {
+      "pack_id": "basic-repo",
+      "name": "Starter repository pack",
+      "version": "0.1",
+      "kind": "rules",
+      "requires_contract": "bumao.rule-pack/v1",
+      "source_path": "packs/rules/basic-repo/0.1",
+      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip",
+      "sha256": "ff02552899c5922d1723cde4ed603eaa42cd100e38a0f977ec6508242138299c",
+      "size_bytes": 18742,
+      "rule_count": 14,
+      "counterexample_count": 14,
+      "license": "MIT"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "required-file-notice",
+  "expect_fail": "basic-repo/required-file-notice",
+  "setup": "Delete NOTICE; every other required file stays in place.",
+  "mutations": {
+    "delete": ["NOTICE"]
+  }
+}

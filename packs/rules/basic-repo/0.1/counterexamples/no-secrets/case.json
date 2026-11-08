@@ -1,0 +1,10 @@
+{
+  "case_id": "no-secrets",
+  "expect_fail": "basic-repo/no-secrets",
+  "setup": "Commit a source file whose api_key assignment looks like a real credential.",
+  "mutations": {
+    "write": {
+      "src/config.py": "# Example settings for the baseline fixture.\napi_key = \"placeholder0123456789abcdef\"\n"
+    }
+  }
+}

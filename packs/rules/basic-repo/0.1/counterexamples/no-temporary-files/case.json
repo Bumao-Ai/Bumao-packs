@@ -1,0 +1,10 @@
+{
+  "case_id": "no-temporary-files",
+  "expect_fail": "basic-repo/no-temporary-files",
+  "setup": "Commit a scratch file named src/app.py.tmp next to the real source.",
+  "mutations": {
+    "write": {
+      "src/app.py.tmp": "scratch\n"
+    }
+  }
+}

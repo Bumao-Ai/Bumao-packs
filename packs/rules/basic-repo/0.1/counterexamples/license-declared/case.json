@@ -1,0 +1,10 @@
+{
+  "case_id": "license-declared",
+  "expect_fail": "basic-repo/license-declared",
+  "setup": "Rewrite README.md without a license section; LICENSE itself remains a valid MIT text.",
+  "mutations": {
+    "write": {
+      "README.md": "# Example Project\n\nA small, valid sample repository used as the passing baseline for the\nbasic-repo rules.\n\n## Layout\n\nThe entry point is `src/app.py`.\n\n## Links\n\n- [Security policy](SECURITY.md)\n- [License](LICENSE)\n- [Notice](NOTICE)\n"
+    }
+  }
+}

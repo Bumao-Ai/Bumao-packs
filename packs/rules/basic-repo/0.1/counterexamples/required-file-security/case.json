@@ -1,0 +1,8 @@
+{
+  "case_id": "required-file-security",
+  "expect_fail": "basic-repo/required-file-security",
+  "setup": "Delete SECURITY.md while every other required file stays valid.",
+  "mutations": {
+    "delete": ["SECURITY.md"]
+  }
+}
