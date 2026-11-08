@@ -6,7 +6,7 @@
   "kind": "rules",
   "requires_contract": "bumao.rule-pack/v1",
   "description": "Ten machine-checkable delivery rules: a non-empty backup, SHA256SUMS that matches real files, README version agreeing with the release tag, a documented rollback command, a .zip release artifact, and no .bak file mixed into the release directory.",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "rule_count": 10,
   "counterexample_count": 10,
   "rule_files": [

@@ -6,7 +6,7 @@
   "kind": "rules",
   "requires_contract": "bumao.rule-pack/v1",
   "description": "Fourteen machine-checkable starter rules for a clean repository: required files, directory naming, empty directories, license consistency, README references, temporary files, large files, and secret-looking strings.",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "rule_count": 14,
   "counterexample_count": 14,
   "rule_files": [

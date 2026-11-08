@@ -10,11 +10,11 @@
       "requires_contract": "bumao.rule-pack/v1",
       "source_path": "packs/rules/basic-repo/0.1",
       "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip",
-      "sha256": "ff02552899c5922d1723cde4ed603eaa42cd100e38a0f977ec6508242138299c",
-      "size_bytes": 18742,
+      "sha256": "4c679ac96b1e8872b1e96d41b1dc0688c14e57ce949fb927b95fe5880f9324b6",
+      "size_bytes": 18744,
       "rule_count": 14,
       "counterexample_count": 14,
-      "license": "MIT"
+      "license": "Apache-2.0"
     },
     {
       "pack_id": "basic-commit",
@@ -24,11 +24,11 @@
       "requires_contract": "bumao.rule-pack/v1",
       "source_path": "packs/rules/basic-commit/0.1",
       "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip",
-      "sha256": "1dba9d70be05753ccb05952f85518c99c6e45f835e72a78267e097dfccb1a6b9",
-      "size_bytes": 13696,
+      "sha256": "e90b1adaf93e45e1e5014ba26f87bca816ebb13f0d7e530efc0d68541ef9ace3",
+      "size_bytes": 13701,
       "rule_count": 10,
       "counterexample_count": 10,
-      "license": "MIT"
+      "license": "Apache-2.0"
     },
     {
       "pack_id": "basic-delivery",
@@ -38,11 +38,11 @@
       "requires_contract": "bumao.rule-pack/v1",
       "source_path": "packs/rules/basic-delivery/0.1",
       "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip",
-      "sha256": "775eee5572da35bbbc886976050d1e298f9b94b51cad980260dc1e855d588646",
-      "size_bytes": 14106,
+      "sha256": "f7d085b2657b3b185d99a8e16926b31ae518be3e26123edff81edf687e0a71f2",
+      "size_bytes": 14109,
       "rule_count": 10,
       "counterexample_count": 10,
-      "license": "MIT"
+      "license": "Apache-2.0"
     }
   ]
 }
