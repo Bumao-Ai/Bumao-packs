@@ -104,4 +104,4 @@ The expected digest is also recorded in `index.json`.
 
 ## License
 
-MIT
+Apache-2.0. See [LICENSE](LICENSE). / 许可证为 Apache-2.0，全文见 [LICENSE](LICENSE)。
