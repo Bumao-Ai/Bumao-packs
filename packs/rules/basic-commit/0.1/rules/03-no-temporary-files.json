@@ -1,0 +1,19 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/no-temporary-files",
+  "title": "No .tmp, .bak, or editor residue is committed",
+  "severity": "minor",
+  "check": {
+    "type": "no_temp_files",
+    "patterns": [
+      "*.tmp",
+      "*.bak",
+      "*.swp",
+      "*.swo",
+      "*~",
+      "*.orig",
+      "*.rej"
+    ]
+  },
+  "message": "Temporary file {path} is committed; delete it and add the pattern to .gitignore."
+}

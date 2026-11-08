@@ -1,0 +1,10 @@
+{
+  "case_id": "no-private-keys",
+  "expect_fail": "basic-commit/no-private-keys",
+  "setup": "Commit a file whose header looks like an RSA private key.",
+  "mutations": {
+    "write": {
+      "keys/server.key": "-----BEGIN RSA PRIVATE KEY-----\nplaceholder key material\n-----END RSA PRIVATE KEY-----\n"
+    }
+  }
+}

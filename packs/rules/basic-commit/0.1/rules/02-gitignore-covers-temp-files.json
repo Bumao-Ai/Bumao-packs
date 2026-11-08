@@ -1,0 +1,16 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/gitignore-covers-temp-files",
+  "title": ".gitignore covers temporary file patterns",
+  "severity": "major",
+  "check": {
+    "type": "gitignore_contains",
+    "file": ".gitignore",
+    "patterns": [
+      "*.tmp",
+      "*.bak",
+      "*~"
+    ]
+  },
+  "message": ".gitignore does not ignore {pattern}; add the pattern so temporary files cannot be committed."
+}

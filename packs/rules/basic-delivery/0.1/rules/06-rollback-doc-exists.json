@@ -1,0 +1,14 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-delivery/rollback-doc-exists",
+  "title": "ROLLBACK.md exists",
+  "severity": "major",
+  "check": {
+    "type": "file_exists",
+    "paths": [
+      "ROLLBACK.md"
+    ],
+    "case_sensitive": true
+  },
+  "message": "Required file {path} is missing; an operator has no documented way back."
+}

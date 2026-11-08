@@ -1,0 +1,26 @@
+{
+  "schema": "bumao.pack/v1",
+  "pack_id": "basic-commit",
+  "name": "Commit hygiene pack",
+  "version": "0.1",
+  "kind": "rules",
+  "requires_contract": "bumao.rule-pack/v1",
+  "description": "Ten machine-checkable rules for clean commits: large files at 1 MiB, private keys and AK/SK shapes, binary artifacts, temporary files, TODO/FIXME markers, commit subjects shorter than 10 characters, conflict markers, and a missing .gitignore.",
+  "license": "MIT",
+  "rule_count": 10,
+  "counterexample_count": 10,
+  "rule_files": [
+    "rules/01-gitignore-exists.json",
+    "rules/02-gitignore-covers-temp-files.json",
+    "rules/03-no-temporary-files.json",
+    "rules/04-no-large-files.json",
+    "rules/05-no-private-keys.json",
+    "rules/06-no-aws-credentials.json",
+    "rules/07-no-binary-artifacts.json",
+    "rules/08-no-todo-markers.json",
+    "rules/09-commit-subject-length.json",
+    "rules/10-no-conflict-markers.json"
+  ],
+  "counterexample_dir": "counterexamples",
+  "verify": "verify.mjs"
+}

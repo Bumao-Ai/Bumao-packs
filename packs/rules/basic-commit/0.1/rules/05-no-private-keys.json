@@ -1,0 +1,17 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/no-private-keys",
+  "title": "No private key block is committed",
+  "severity": "blocker",
+  "check": {
+    "type": "no_secrets",
+    "max_scan_bytes": 1048576,
+    "patterns": [
+      {
+        "kind": "private key block",
+        "regex": "-----BEGIN [A-Z ]{0,12}PRIVATE KEY-----"
+      }
+    ]
+  },
+  "message": "Possible {kind} in {path} at line {line}; remove it from the commit and rotate the key if it was real."
+}

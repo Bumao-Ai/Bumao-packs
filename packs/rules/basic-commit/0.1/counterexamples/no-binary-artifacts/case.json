@@ -1,0 +1,14 @@
+{
+  "case_id": "no-binary-artifacts",
+  "expect_fail": "basic-commit/no-binary-artifacts",
+  "setup": "Commit a compiled artifact named build/tool.exe.",
+  "mutations": {
+    "write_bytes": [
+      {
+        "path": "build/tool.exe",
+        "size": 64,
+        "fill": "x"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "gitignore-covers-temp-files",
+  "expect_fail": "basic-commit/gitignore-covers-temp-files",
+  "setup": "Replace .gitignore with a file that covers *.tmp but not *.bak or *~.",
+  "mutations": {
+    "write": {
+      ".gitignore": "*.tmp\nnode_modules/\n"
+    }
+  }
+}

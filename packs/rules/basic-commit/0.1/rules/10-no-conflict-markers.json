@@ -1,0 +1,11 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/no-conflict-markers",
+  "title": "No merge conflict marker is committed",
+  "severity": "blocker",
+  "check": {
+    "type": "no_conflict_markers",
+    "max_scan_bytes": 1048576
+  },
+  "message": "Merge conflict marker at {path}:{line}; resolve the conflict before committing."
+}

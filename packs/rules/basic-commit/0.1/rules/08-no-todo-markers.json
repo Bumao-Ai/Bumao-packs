@@ -1,0 +1,15 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/no-todo-markers",
+  "title": "No TODO or FIXME marker is left in source",
+  "severity": "minor",
+  "check": {
+    "type": "no_markers",
+    "markers": [
+      "TODO",
+      "FIXME"
+    ],
+    "max_scan_bytes": 1048576
+  },
+  "message": "{marker} marker remains in {path} at line {line}; finish the work or link it to an issue."
+}

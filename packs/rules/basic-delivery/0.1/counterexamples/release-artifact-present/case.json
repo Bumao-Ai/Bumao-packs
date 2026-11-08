@@ -1,0 +1,13 @@
+{
+  "case_id": "release-artifact-present",
+  "expect_fail": "basic-delivery/release-artifact-present",
+  "setup": "Delete release/app-0.1.zip and leave the release directory present.",
+  "mutations": {
+    "delete": [
+      "release/app-0.1.zip"
+    ],
+    "mkdir": [
+      "release"
+    ]
+  }
+}

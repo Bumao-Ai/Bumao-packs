@@ -1,0 +1,14 @@
+{
+  "case_id": "no-large-files",
+  "expect_fail": "basic-commit/no-large-files",
+  "setup": "Materialize assets/big.dat at 1100000 bytes, above the 1 MiB limit.",
+  "mutations": {
+    "write_bytes": [
+      {
+        "path": "assets/big.dat",
+        "size": 1100000,
+        "fill": "x"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "backup-directory-exists",
+  "expect_fail": "basic-delivery/backup-directory-exists",
+  "setup": "Delete the backup directory and its contents.",
+  "mutations": {
+    "delete": [
+      "backup"
+    ]
+  }
+}

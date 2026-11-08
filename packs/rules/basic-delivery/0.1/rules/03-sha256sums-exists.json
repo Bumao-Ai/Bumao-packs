@@ -1,0 +1,14 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-delivery/sha256sums-exists",
+  "title": "SHA256SUMS exists at the repository root",
+  "severity": "major",
+  "check": {
+    "type": "file_exists",
+    "paths": [
+      "SHA256SUMS"
+    ],
+    "case_sensitive": true
+  },
+  "message": "Required file {path} is missing; a downloader has no way to verify the delivered archive."
+}

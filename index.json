@@ -15,6 +15,34 @@
       "rule_count": 14,
       "counterexample_count": 14,
       "license": "MIT"
+    },
+    {
+      "pack_id": "basic-commit",
+      "name": "Commit hygiene pack",
+      "version": "0.1",
+      "kind": "rules",
+      "requires_contract": "bumao.rule-pack/v1",
+      "source_path": "packs/rules/basic-commit/0.1",
+      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip",
+      "sha256": "1dba9d70be05753ccb05952f85518c99c6e45f835e72a78267e097dfccb1a6b9",
+      "size_bytes": 13696,
+      "rule_count": 10,
+      "counterexample_count": 10,
+      "license": "MIT"
+    },
+    {
+      "pack_id": "basic-delivery",
+      "name": "Delivery readiness pack",
+      "version": "0.1",
+      "kind": "rules",
+      "requires_contract": "bumao.rule-pack/v1",
+      "source_path": "packs/rules/basic-delivery/0.1",
+      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip",
+      "sha256": "775eee5572da35bbbc886976050d1e298f9b94b51cad980260dc1e855d588646",
+      "size_bytes": 14106,
+      "rule_count": 10,
+      "counterexample_count": 10,
+      "license": "MIT"
     }
   ]
 }

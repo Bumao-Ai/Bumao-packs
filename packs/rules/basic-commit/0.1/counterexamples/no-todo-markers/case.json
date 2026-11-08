@@ -1,0 +1,10 @@
+{
+  "case_id": "no-todo-markers",
+  "expect_fail": "basic-commit/no-todo-markers",
+  "setup": "Leave a TODO marker in src/notes.py.",
+  "mutations": {
+    "write": {
+      "src/notes.py": "# TODO: replace the placeholder implementation.\n"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "gitignore-exists",
+  "expect_fail": "basic-commit/gitignore-exists",
+  "setup": "Delete .gitignore while every other file stays valid.",
+  "mutations": {
+    "delete": [
+      ".gitignore"
+    ]
+  }
+}

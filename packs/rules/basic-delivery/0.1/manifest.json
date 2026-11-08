@@ -1,0 +1,26 @@
+{
+  "schema": "bumao.pack/v1",
+  "pack_id": "basic-delivery",
+  "name": "Delivery readiness pack",
+  "version": "0.1",
+  "kind": "rules",
+  "requires_contract": "bumao.rule-pack/v1",
+  "description": "Ten machine-checkable delivery rules: a non-empty backup, SHA256SUMS that matches real files, README version agreeing with the release tag, a documented rollback command, a .zip release artifact, and no .bak file mixed into the release directory.",
+  "license": "MIT",
+  "rule_count": 10,
+  "counterexample_count": 10,
+  "rule_files": [
+    "rules/01-backup-directory-exists.json",
+    "rules/02-backup-file-non-empty.json",
+    "rules/03-sha256sums-exists.json",
+    "rules/04-sha256sums-matches.json",
+    "rules/05-readme-version-matches-tag.json",
+    "rules/06-rollback-doc-exists.json",
+    "rules/07-rollback-command-present.json",
+    "rules/08-no-bak-in-release.json",
+    "rules/09-release-artifact-present.json",
+    "rules/10-release-artifact-non-empty.json"
+  ],
+  "counterexample_dir": "counterexamples",
+  "verify": "verify.mjs"
+}

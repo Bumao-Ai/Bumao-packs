@@ -1,0 +1,10 @@
+{
+  "case_id": "rollback-command-present",
+  "expect_fail": "basic-delivery/rollback-command-present",
+  "setup": "Replace ROLLBACK.md with prose that names no executable rollback command.",
+  "mutations": {
+    "write": {
+      "ROLLBACK.md": "# Rollback\n\nSee the release notes for the rollback procedure.\n"
+    }
+  }
+}

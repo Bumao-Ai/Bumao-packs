@@ -1,0 +1,10 @@
+{
+  "case_id": "sha256sums-exists",
+  "expect_fail": "basic-delivery/sha256sums-exists",
+  "setup": "Delete SHA256SUMS while the release artifact stays in place.",
+  "mutations": {
+    "delete": [
+      "SHA256SUMS"
+    ]
+  }
+}

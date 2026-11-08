@@ -1,0 +1,11 @@
+{
+  "case_id": "readme-version-matches-tag",
+  "expect_fail": "basic-delivery/readme-version-matches-tag",
+  "setup": "Declare version 0.2 in README.md while verifying against tag v0.1.",
+  "tag": "v0.1",
+  "mutations": {
+    "write": {
+      "README.md": "# Delivery Fixture\n\nVersion: 0.2\n\nA small baseline used by the basic-delivery counterexamples.\n"
+    }
+  }
+}

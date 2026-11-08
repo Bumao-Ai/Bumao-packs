@@ -25,22 +25,26 @@ Optional rule packs and feature packs for Bumao Core — install what you need, 
 | Pack | Version | Kind | Rules | Counterexamples | Requires contract | Archive |
 |---|---|---|---|---|---|---|
 | `basic-repo` | `0.1` | rules | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip) |
+| `basic-commit` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
+| `basic-delivery` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
 
 `index.json` is the machine-readable catalog: pack id, version, contract, download URL, and SHA-256 for each archive.
 
-### basic-repo 0.1
+### Pack summaries
 
-Starter checks that make sense for any repository: required files, directory naming, empty directories, license consistency, README references, temporary files, large files, and secret-looking strings.
+- `basic-repo 0.1` — required files, directory naming, empty directories, license consistency, README references, temporary files, large files, and secret-looking strings.
+- `basic-commit 0.1` — a missing `.gitignore`, files over 1 MiB, private keys and AK/SK shapes, binary artifacts, `.tmp` / `.bak` / `~` residue, TODO / FIXME markers, empty or too-short commit subjects, and conflict markers.
+- `basic-delivery 0.1` — a non-empty backup, `SHA256SUMS` matching real files, README version matching the tag, a documented rollback command, a `.zip` release artifact, and no `.bak` in `release/`.
 
-All rules are machine-checkable, and each rule ships one counterexample that must fail.
+All rules are machine-checkable, and each rule ships one counterexample that must fail before the pack is listed in `index.json`.
 
 ## Manual install
 
-No `bumao-pack install` command is provided yet. Three steps:
+No `bumao-pack install` command is provided yet. Three steps, the same for every pack:
 
-1. Download `basic-repo-0.1.zip` from the Release and unzip it into `<bumao-core>/packs/rules/basic-repo/0.1/`.
+1. Download `<pack>-0.1.zip` from its Release and unzip it into `<bumao-core>/packs/rules/<pack>/0.1/`.
 2. Point your Bumao Core pack configuration at that directory — the one containing `manifest.json` and `rules/`.
-3. Run `node verify.mjs` inside that directory; all 14 counterexamples must print `RED`, then run one `check` against a real repository.
+3. Run `node verify.mjs` inside that directory; every counterexample listed in the table must print `RED`, then run one `check` against a real repository. `basic-delivery` additionally needs `--tag v0.1`.
 
 ## Verify a download
 
@@ -73,22 +77,26 @@ The expected digest is also recorded in `index.json`.
 | 包 | 版本 | 类型 | 规则数 | 反例数 | 依赖契约 | 下载 |
 |---|---|---|---|---|---|---|
 | `basic-repo` | `0.1` | 规则 | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip) |
+| `basic-commit` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
+| `basic-delivery` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
 
 `index.json` 是给机器读的目录：包名、版本、依赖契约、下载地址、压缩包 SHA-256。
 
-### basic-repo 0.1
+### 包说明
 
-起盘包：任何仓库都用得上的检查——必备文件、目录命名、空目录、许可证一致性、README 引用的文件、临时文件、大文件、疑似密钥。
+- `basic-repo 0.1` — 起盘包：必备文件、目录命名、空目录、许可证一致性、README 引用、临时文件、大文件、疑似密钥。
+- `basic-commit 0.1` — 提交包：`.gitignore` 缺失、超过 1 MiB 的文件、私钥与 AK/SK 形态、二进制产物、`.tmp`／`.bak`／`~` 残留、TODO／FIXME、提交标题为空或过短、冲突标记。
+- `basic-delivery 0.1` — 交付包：非空备份、`SHA256SUMS` 与实际一致、README 版本号与 tag 一致、回滚命令、`.zip` 交付物、`release/` 不混入 `.bak`。
 
-所有规则都能机判。每条规则配一个必然失败的反例；跑不红就说明这条规则没用。
+所有规则都能机判。每条规则配一个必然失败的反例；没跑红的包不许进 `index.json`。
 
 ## 手动安装
 
-今天不提供 `bumao-pack install` 命令，三步手动装：
+今天不提供 `bumao-pack install` 命令，三步手动装，每个包相同：
 
-1. 从 Release 下载 `basic-repo-0.1.zip`，解压到 `<bumao-core>/packs/rules/basic-repo/0.1/`。
+1. 从对应 Release 下载 `<包名>-0.1.zip`，解压到 `<bumao-core>/packs/rules/<包名>/0.1/`。
 2. 把 Bumao Core 的包配置指向这个目录——即放着 `manifest.json` 和 `rules/` 的那一层。
-3. 在该目录运行 `node verify.mjs`，14 个反例必须全部报 `RED`；然后对一个真实仓库跑一次 `check`。
+3. 在该目录运行 `node verify.mjs`，表格里的反例数必须全部报 `RED`；然后对一个真实仓库跑一次 `check`。`basic-delivery` 需额外加 `--tag v0.1`。
 
 ## 回验下载
 

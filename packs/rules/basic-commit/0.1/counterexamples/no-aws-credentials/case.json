@@ -1,0 +1,10 @@
+{
+  "case_id": "no-aws-credentials",
+  "expect_fail": "basic-commit/no-aws-credentials",
+  "setup": "Commit a settings file containing an AK-shaped key id and a secret assignment.",
+  "mutations": {
+    "write": {
+      "src/aws_settings.py": "aws_access_key_id = \"AKIA0000000000000000\"\naws_secret_access_key = \"placeholder000000000000000000000000000000\"\n"
+    }
+  }
+}

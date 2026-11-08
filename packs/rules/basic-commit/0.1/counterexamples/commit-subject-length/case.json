@@ -1,0 +1,9 @@
+{
+  "case_id": "commit-subject-length",
+  "expect_fail": "basic-commit/commit-subject-length",
+  "setup": "Make the latest commit with an empty subject.",
+  "mutations": {},
+  "commit": {
+    "message": ""
+  }
+}

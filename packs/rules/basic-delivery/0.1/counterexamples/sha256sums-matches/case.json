@@ -1,0 +1,10 @@
+{
+  "case_id": "sha256sums-matches",
+  "expect_fail": "basic-delivery/sha256sums-matches",
+  "setup": "Replace every hash in SHA256SUMS with a wrong 64-character digest.",
+  "mutations": {
+    "write": {
+      "SHA256SUMS": "0000000000000000000000000000000000000000000000000000000000000000  release/app-0.1.zip\n"
+    }
+  }
+}

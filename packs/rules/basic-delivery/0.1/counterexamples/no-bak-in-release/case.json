@@ -1,0 +1,10 @@
+{
+  "case_id": "no-bak-in-release",
+  "expect_fail": "basic-delivery/no-bak-in-release",
+  "setup": "Add release/app-0.1.zip.bak next to the real artifact.",
+  "mutations": {
+    "write": {
+      "release/app-0.1.zip.bak": "backup\n"
+    }
+  }
+}

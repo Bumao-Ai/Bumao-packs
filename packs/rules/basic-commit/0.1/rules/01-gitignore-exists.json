@@ -1,0 +1,14 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/gitignore-exists",
+  "title": ".gitignore exists at the repository root",
+  "severity": "blocker",
+  "check": {
+    "type": "file_exists",
+    "paths": [
+      ".gitignore"
+    ],
+    "case_sensitive": true
+  },
+  "message": "Required file {path} is missing; without .gitignore, build and temporary files drift into commits."
+}

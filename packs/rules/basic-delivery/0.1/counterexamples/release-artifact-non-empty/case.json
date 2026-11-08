@@ -1,0 +1,10 @@
+{
+  "case_id": "release-artifact-non-empty",
+  "expect_fail": "basic-delivery/release-artifact-non-empty",
+  "setup": "Replace release/app-0.1.zip with a zero-byte file.",
+  "mutations": {
+    "write": {
+      "release/app-0.1.zip": ""
+    }
+  }
+}

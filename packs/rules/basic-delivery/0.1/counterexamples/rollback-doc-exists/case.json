@@ -1,0 +1,10 @@
+{
+  "case_id": "rollback-doc-exists",
+  "expect_fail": "basic-delivery/rollback-doc-exists",
+  "setup": "Delete ROLLBACK.md.",
+  "mutations": {
+    "delete": [
+      "ROLLBACK.md"
+    ]
+  }
+}

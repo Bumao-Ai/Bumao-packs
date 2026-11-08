@@ -1,0 +1,13 @@
+{
+  "case_id": "backup-file-non-empty",
+  "expect_fail": "basic-delivery/backup-file-non-empty",
+  "setup": "Keep the backup directory but remove every file inside it.",
+  "mutations": {
+    "delete": [
+      "backup/app-0.1-backup.zip"
+    ],
+    "mkdir": [
+      "backup"
+    ]
+  }
+}

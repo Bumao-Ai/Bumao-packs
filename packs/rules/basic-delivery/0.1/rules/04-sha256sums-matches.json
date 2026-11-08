@@ -1,0 +1,12 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-delivery/sha256sums-matches",
+  "title": "Every hash in SHA256SUMS matches the real file",
+  "severity": "blocker",
+  "check": {
+    "type": "sha256sums_match",
+    "file": "SHA256SUMS"
+  },
+  "message": "{path}: SHA256SUMS says {expected}, but the file hashes to {actual}.",
+  "message_empty": "SHA256SUMS contains no usable hash lines; add one line per shipped file."
+}

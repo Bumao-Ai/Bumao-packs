@@ -1,0 +1,11 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-delivery/backup-directory-exists",
+  "title": "A backup directory exists",
+  "severity": "blocker",
+  "check": {
+    "type": "dir_exists",
+    "dir": "backup"
+  },
+  "message": "Delivery backup directory {dir} does not exist; create it and put a restorable backup inside."
+}

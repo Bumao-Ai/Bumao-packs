@@ -1,0 +1,13 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-delivery/release-artifact-non-empty",
+  "title": "The release artifact is not empty",
+  "severity": "blocker",
+  "check": {
+    "type": "dir_has_nonempty_file",
+    "dir": "release",
+    "match": "*.zip",
+    "min_bytes": 1
+  },
+  "message": "Release artifact {path} is empty; an empty archive cannot be installed."
+}

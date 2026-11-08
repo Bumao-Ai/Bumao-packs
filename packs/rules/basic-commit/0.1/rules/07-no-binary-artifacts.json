@@ -1,0 +1,22 @@
+{
+  "schema": "bumao.rule/v1",
+  "rule_id": "basic-commit/no-binary-artifacts",
+  "title": "No compiled or binary artifact is committed",
+  "severity": "major",
+  "check": {
+    "type": "no_binary_files",
+    "extensions": [
+      ".exe",
+      ".dll",
+      ".so",
+      ".dylib",
+      ".bin",
+      ".o",
+      ".a",
+      ".class",
+      ".jar",
+      ".pyc"
+    ]
+  },
+  "message": "Binary artifact {path} is committed; keep build outputs out of the repository."
+}

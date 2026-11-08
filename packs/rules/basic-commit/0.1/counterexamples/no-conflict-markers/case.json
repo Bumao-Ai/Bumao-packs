@@ -1,0 +1,10 @@
+{
+  "case_id": "no-conflict-markers",
+  "expect_fail": "basic-commit/no-conflict-markers",
+  "setup": "Commit a source file that still contains conflict markers.",
+  "mutations": {
+    "write": {
+      "src/merge.py": "<<<<<<< HEAD\nvalue = 1\n=======\nvalue = 2\n>>>>>>> branch\n"
+    }
+  }
+}
