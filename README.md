@@ -1,24 +1,72 @@
-# bumao-packs
+# Bumao Packs
+
+[![license](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+![packs](https://img.shields.io/badge/packs-3-brightgreen)
+![rules](https://img.shields.io/badge/rules-34-brightgreen)
+![verify](https://img.shields.io/badge/counterexamples-34%2F34%20red-brightgreen)
 
 **English**
 
-Optional rule packs and feature packs for Bumao Core — install what you need, keep the kernel minimal.
+Optional rule packs for Bumao Core — install what you need, keep the kernel minimal.
 
-1. **What this is:** this repository holds packs you install into Bumao Core; the kernel itself is not here.
-2. **Who it is for:** people who want checks and UI available as soon as a repository is set up.
-3. **What it solves:** the kernel only judges; rules and features come from packs — installing nothing breaks nothing, installing gives you content.
+1. **What this is:** a catalog of rule packs you drop into Bumao Core; the kernel itself is not here.
+2. **Who it is for:** people who want checks available as soon as a repository is set up.
+3. **What it solves:** the kernel only judges; rules come from packs — installing nothing breaks nothing, installing gives you content.
 
-> **Every pack ships counterexamples. Run them yourself and watch them go red — that is how you know a pack is not decoration.**
+> Every pack ships counterexamples. Run them yourself and watch them go red — that is how you know a pack is not decoration.
 
-**中文**
+![verify.mjs output for all three packs](docs/screens/verify.png)
 
-内核的可选规则包与功能包，按需安装，内核保持最小。
+*Real `node verify.mjs` output for the three packs: 34/34 counterexamples red, baseline clean. Terminal capture, no mock UI.*
 
-1. **这是什么：**这里放的是给 Bumao Core 装的「包」，不是内核本身。
-2. **给谁：**想让仓库一装起来就有检查项、有界面的人。
-3. **解决什么：**内核只负责判定，规则和功能靠包补——不装不会坏，装了才有内容。
+## Quick start
 
-> **每个包都带反例，装完能自己跑红，证明它不是摆设。**
+```bash
+git clone https://github.com/Bumao-Ai/bumao-packs.git
+cd bumao-packs
+node packs/rules/basic-commit/0.1/verify.mjs
+```
+
+Expected last line:
+
+```
+RESULT: PASS — 10/10 counterexamples red, baseline clean, 10/10 rules covered
+```
+
+No Node package install is needed: `verify.mjs` uses Node built-ins only (Node 18+).
+
+## Proof of work
+
+| Item | Value | Source |
+|---|---|---|
+| Commits | 4 | `git rev-list --count HEAD` |
+| Last commit | 2026-11-08 | `git log -1 --date=short` |
+| Packs | 3 | `index.json` |
+| Rules | 34 (14 / 10 / 10) | `packs/rules/*/0.1/rules/*.json` |
+| Counterexamples | 34 (14 / 10 / 10) | `packs/rules/*/0.1/counterexamples/*/` |
+| Self-check | 3/3 `RESULT: PASS` | `node packs/rules/<pack>/0.1/verify.mjs` |
+| Releases | 3 tags, all 2026-11-08 | `git log -1 --date=short <tag>` |
+| Changelog | [CHANGELOG.md](CHANGELOG.md) | — |
+
+Release lines are independent today: `v0.1` (basic-repo), `basic-commit-0.1`, `basic-delivery-0.1`. There is no single repo-wide version number yet; a unified line is not claimed.
+
+## Roadmap (0.2 — in progress)
+
+- **Before execution** — declare intent before acting; the kernel judges the declaration. *(in progress)*
+- **During execution** — continuous checks while the agent runs. *(in progress)*
+- **After execution** — audit trail linking action, basis, result and exception. *(in progress)*
+
+## Architecture
+
+```mermaid
+flowchart LR
+    K[Bumao Core kernel] -->|loads| M[manifest.json]
+    M --> R[rules/*.json]
+    M --> C[counterexamples/*]
+    R --> V[verify.mjs]
+    C --> V
+    V -->|RED per case| O[RESULT: PASS / FAIL]
+```
 
 ## Packs
 
@@ -28,51 +76,101 @@ Optional rule packs and feature packs for Bumao Core — install what you need, 
 | `basic-commit` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
 | `basic-delivery` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
 
-`index.json` is the machine-readable catalog: pack id, version, contract, download URL, and SHA-256 for each archive.
+`index.json` is the machine-readable catalog: pack id, version, contract, download URL, SHA-256 and size.
 
-### Pack summaries
+## What gets checked
 
-- `basic-repo 0.1` — required files, directory naming, empty directories, license consistency, README references, temporary files, large files, and secret-looking strings.
-- `basic-commit 0.1` — a missing `.gitignore`, files over 1 MiB, private keys and AK/SK shapes, binary artifacts, `.tmp` / `.bak` / `~` residue, TODO / FIXME markers, empty or too-short commit subjects, and conflict markers.
-- `basic-delivery 0.1` — a non-empty backup, `SHA256SUMS` matching real files, README version matching the tag, a documented rollback command, a `.zip` release artifact, and no `.bak` in `release/`.
+- `basic-repo` — required files, directory naming, empty directories, license consistency, README references, temporary files, large files, secret-looking strings.
+- `basic-commit` — missing `.gitignore`, files over 1 MiB, private keys and AK/SK shapes, binary artifacts, `.tmp` / `.bak` / `~` residue, TODO / FIXME markers, empty or too-short commit subjects, conflict markers.
+- `basic-delivery` — non-empty backup, `SHA256SUMS` matching real files, README version matching the tag, documented rollback command, a `.zip` release artifact, no `.bak` in `release/`.
 
-All rules are machine-checkable, and each rule ships one counterexample that must fail before the pack is listed in `index.json`.
+All rules are machine-checkable. A pack is listed in `index.json` only after every counterexample goes red.
 
-## Manual install
+## Install into Bumao Core
 
 No `bumao-pack install` command is provided yet. Three steps, the same for every pack:
 
-1. Download `<pack>-0.1.zip` from its Release and unzip it into `<bumao-core>/packs/rules/<pack>/0.1/`.
+1. Copy the pack directory into `<bumao-core>/packs/rules/<pack>/0.1/` (**replace `<bumao-core>` with your own kernel path**).
 2. Point your Bumao Core pack configuration at that directory — the one containing `manifest.json` and `rules/`.
-3. Run `node verify.mjs` inside that directory; every counterexample listed in the table must print `RED`, then run one `check` against a real repository. `basic-delivery` additionally needs `--tag v0.1`.
+3. Run `node verify.mjs` inside it; every counterexample must print `RED`, then run one `check` against a real repository. `basic-delivery` additionally needs `--tag v0.1`.
 
 ## Verify a download
-
-Download the archive and `SHA256SUMS` from the Release, then compare:
 
 ```bash
 sha256sum -c SHA256SUMS
 ```
 
-On Windows PowerShell:
+Windows PowerShell:
 
 ```powershell
 (Get-FileHash .\basic-repo-0.1.zip -Algorithm SHA256).Hash.ToLower() -eq (Get-Content .\SHA256SUMS).Split()[0]
 ```
 
-The expected digest is also recorded in `index.json`.
+The expected digest and size are also recorded in `index.json`.
+
+## Layout
+
+```text
+bumao-packs/
+├── index.json                 # machine-readable catalog
+├── packs/rules/
+│   ├── basic-repo/0.1/        # manifest.json, rules/, counterexamples/, verify.mjs
+│   ├── basic-commit/0.1/
+│   └── basic-delivery/0.1/
+├── docs/screens/verify.png    # real verify.mjs output
+├── CHANGELOG.md
+├── LICENSE / NOTICE / SECURITY.md / CONTRIBUTING.md / TRADEMARK.md / DCO
+└── README.md
+```
 
 ---
 
-# bumao-packs（中文）
+# Bumao Packs（中文）
 
-内核的可选规则包与功能包，按需安装，内核保持最小。
+内核的可选规则包目录——按需安装，内核保持最小。
 
-这里放的是给 Bumao Core 装的「包」，不是内核本身。给想让仓库一装起来就有检查项、有界面的人。内核只负责判定，规则和功能靠包补——不装不会坏，装了才有内容。
+1. **这是什么：** 这里放的是给 Bumao Core 装的「包」，不是内核本身。
+2. **给谁：** 想让仓库一装起来就有检查项的人。
+3. **解决什么：** 内核只负责判定，规则靠包补——不装不会坏，装了才有内容。
 
-**每个包都带反例，装完能自己跑红，证明它不是摆设。**
+> 每个包都带反例，装完能自己跑红，证明它不是摆设。
 
-## 包目录
+![三个包的 verify.mjs 输出](docs/screens/verify.png)
+
+*三个包的真实 `node verify.mjs` 输出：34/34 反例全红、基线干净。终端截图，非模拟界面。*
+
+## 快速开始
+
+```bash
+git clone https://github.com/Bumao-Ai/bumao-packs.git
+cd bumao-packs
+node packs/rules/basic-commit/0.1/verify.mjs
+```
+
+预期最后一行：`RESULT: PASS — 10/10 counterexamples red, baseline clean, 10/10 rules covered`。无需安装 npm 依赖，`verify.mjs` 只用 Node 内置模块（Node 18+）。
+
+## 工作留痕
+
+| 项 | 实测值 | 取值来源 |
+|---|---|---|
+| 提交次数 | 4 | `git rev-list --count HEAD` |
+| 最近提交 | 2026-11-08 | `git log -1 --date=short` |
+| 包数 | 3 | `index.json` |
+| 规则数 | 34（14／10／10） | `packs/rules/*/0.1/rules/*.json` |
+| 反例数 | 34（14／10／10） | `packs/rules/*/0.1/counterexamples/*/` |
+| 自检 | 3/3 `RESULT: PASS` | `node packs/rules/<pack>/0.1/verify.mjs` |
+| 发布节奏 | 3 个 tag，均为 2026-11-08 | `git log -1 --date=short <tag>` |
+| 变更记录 | [CHANGELOG.md](CHANGELOG.md) | — |
+
+今天的发布线是三条独立线：`v0.1`（basic-repo）、`basic-commit-0.1`、`basic-delivery-0.1`。尚无统一的整仓版本号，未合并前不作此声称。
+
+## Roadmap（0.2 — 进行中）
+
+- **执行前约束**——行动前先声明意图，内核判定声明。*（进行中）*
+- **执行中监管**——代理运行期间持续检查。*（进行中）*
+- **执行后审计**——串起动作、依据、结果与例外。*（进行中）*
+
+## 包清单
 
 | 包 | 版本 | 类型 | 规则数 | 反例数 | 依赖契约 | 下载 |
 |---|---|---|---|---|---|---|
@@ -80,28 +178,53 @@ The expected digest is also recorded in `index.json`.
 | `basic-commit` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
 | `basic-delivery` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
 
-`index.json` 是给机器读的目录：包名、版本、依赖契约、下载地址、压缩包 SHA-256。
+`index.json` 是给机器读的目录：包名、版本、依赖契约、下载地址、SHA-256 与体积。
 
-### 包说明
+## 检查什么
 
-- `basic-repo 0.1` — 起盘包：必备文件、目录命名、空目录、许可证一致性、README 引用、临时文件、大文件、疑似密钥。
-- `basic-commit 0.1` — 提交包：`.gitignore` 缺失、超过 1 MiB 的文件、私钥与 AK/SK 形态、二进制产物、`.tmp`／`.bak`／`~` 残留、TODO／FIXME、提交标题为空或过短、冲突标记。
-- `basic-delivery 0.1` — 交付包：非空备份、`SHA256SUMS` 与实际一致、README 版本号与 tag 一致、回滚命令、`.zip` 交付物、`release/` 不混入 `.bak`。
+- `basic-repo`——必备文件、目录命名、空目录、许可证一致性、README 引用、临时文件、大文件、疑似密钥。
+- `basic-commit`——`.gitignore` 缺失、超过 1 MiB 的文件、私钥与 AK/SK 形态、二进制产物、`.tmp`／`.bak`／`~` 残留、TODO／FIXME、提交标题为空或过短、冲突标记。
+- `basic-delivery`——非空备份、`SHA256SUMS` 与实际一致、README 版本号与 tag 一致、回滚命令、`.zip` 交付物、`release/` 不混入 `.bak`。
 
-所有规则都能机判。每条规则配一个必然失败的反例；没跑红的包不许进 `index.json`。
+所有规则都能机判；反例没全红的包不进 `index.json`。
 
-## 手动安装
+## 装进 Bumao Core
 
-今天不提供 `bumao-pack install` 命令，三步手动装，每个包相同：
+暂无 `bumao-pack install` 命令，三步手动装，每个包相同：
 
-1. 从对应 Release 下载 `<包名>-0.1.zip`，解压到 `<bumao-core>/packs/rules/<包名>/0.1/`。
+1. 把包目录复制到 `<bumao-core>/packs/rules/<包名>/0.1/`（**`<bumao-core>` 需替换为你自己的内核路径**）。
 2. 把 Bumao Core 的包配置指向这个目录——即放着 `manifest.json` 和 `rules/` 的那一层。
-3. 在该目录运行 `node verify.mjs`，表格里的反例数必须全部报 `RED`；然后对一个真实仓库跑一次 `check`。`basic-delivery` 需额外加 `--tag v0.1`。
+3. 在该目录运行 `node verify.mjs`，反例必须全部报 `RED`；再对一个真实仓库跑一次 `check`。`basic-delivery` 需额外加 `--tag v0.1`。
 
 ## 回验下载
 
-从 Release 下载压缩包和 `SHA256SUMS`，按上面的命令比对哈希；`index.json` 里也记录了同一个摘要。
+```bash
+sha256sum -c SHA256SUMS
+```
 
-## License
+Windows PowerShell：
 
-Apache-2.0. See [LICENSE](LICENSE). / 许可证为 Apache-2.0，全文见 [LICENSE](LICENSE)。
+```powershell
+(Get-FileHash .\basic-repo-0.1.zip -Algorithm SHA256).Hash.ToLower() -eq (Get-Content .\SHA256SUMS).Split()[0]
+```
+
+摘要与体积同时记录在 `index.json`。
+
+## 目录
+
+```text
+bumao-packs/
+├── index.json                 # 机器可读目录
+├── packs/rules/
+│   ├── basic-repo/0.1/        # manifest.json、rules/、counterexamples/、verify.mjs
+│   ├── basic-commit/0.1/
+│   └── basic-delivery/0.1/
+├── docs/screens/verify.png    # 真实 verify.mjs 输出
+├── CHANGELOG.md
+├── LICENSE / NOTICE / SECURITY.md / CONTRIBUTING.md / TRADEMARK.md / DCO
+└── README.md
+```
+
+## 文档与许可
+
+Apache-2.0，全文见 [LICENSE](LICENSE)；变更记录见 [CHANGELOG.md](CHANGELOG.md)；安全策略见 [SECURITY.md](SECURITY.md)。
