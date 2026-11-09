@@ -55,3 +55,32 @@ Initial release. Three independent release lines, one per pack: `v0.1` (basic-re
 中文
 
 首次发布。三条独立发布线，每包一条：`v0.1`（basic-repo）、`basic-commit-0.1`、`basic-delivery-0.1`。尚无整仓统一版本号。
+
+---
+
+## English
+
+### 0.1.2 — 2026-11-09
+
+- **Repository-wide release `v0.1.2`.** The tag version tracks documentation and catalog changes; pack contents remain at `0.1`.
+- **Bilingual docs completed.** `CONTRIBUTING.md`, `NOTICE` and `SECURITY.md` now carry the full English section alongside the existing Chinese text.
+- **Catalog and README links point at this release.** `index.json` and both README pack tables now use `releases/download/v0.1.2/`, so a download from the documentation resolves to the archives attached to this tag.
+- **Measured facts refreshed.** README commit count, last-commit date and release list now match the repository at `v0.1.2`.
+- **Pack archives are unchanged.** All three zips are byte-identical to `v0.1.1` — same SHA-256 (`5751aac1…`, `d9123ee5…`, `04e78143…`) and same sizes (18,762 / 13,703 / 14,108 B). No rule, check or contract behaviour changed.
+
+Verify: `node packs/rules/<pack>/0.1/verify.mjs` → `RESULT: PASS` (14/14, 10/10, 10/10); `sha256sum -c dist/SHA256SUMS` → all OK.
+
+### 0.1.1 — 2026-11-09
+
+- **License unified.** `LICENSE` is now byte-identical to the file used by the four main repositories (Apache-2.0, 11,336 B, sha256 `180ab2a186c91b04…`), with no extra copyright line and no leading blank line. `index.json` and all three `manifest.json` files declare `Apache-2.0`.
+- **Pack self-check is green again.** `basic-repo` failed on its own baseline because the fixture README was checked out with CRLF, and `basic-delivery` failed because its `_baseline/SHA256SUMS` was stale. Both fixed; `node verify.mjs` now returns `RESULT: PASS` for all three packs (14/14, 10/10, 10/10).
+- **Line endings pinned.** New `.gitattributes` (`* text=auto eol=lf`, `*.bat text eol=crlf`); the CRLF working-tree conversion that caused the false baseline failure no longer applies.
+- **README rebuilt** to the same 11-section structure as the four main repositories, with measured values and a real terminal screenshot.
+- **Missing repository files added:** `CHANGELOG.md`, `CONTRIBUTING.md`, `TRADEMARK.md`, `DCO`.
+- **Pack archives rebuilt for this release.** All three `manifest.json` files changed (`license` `MIT` → `Apache-2.0`), and `basic-delivery`'s `_baseline/SHA256SUMS` lost its trailing newline, so every pack zip is republished under `v0.1.1`; `index.json` `download_url` / `sha256` / `size_bytes` were updated accordingly (basic-repo 18,744 → 18,762 B, basic-commit 13,701 → 13,703 B, basic-delivery 14,109 → 14,108 B). The `v0.1`, `basic-commit-0.1` and `basic-delivery-0.1` releases remain in place, untouched.
+
+No rule, check or contract behaviour changed. `packs/rules/*/0.1/rules/*.json` is untouched.
+
+### 0.1 — 2026-11-08
+
+Initial release. Three independent release lines, one per pack: `v0.1` (basic-repo), `basic-commit-0.1`, `basic-delivery-0.1`. No repo-wide single version line exists yet.
