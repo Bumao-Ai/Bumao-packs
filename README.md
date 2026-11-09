@@ -22,8 +22,8 @@ Optional rule packs for Bumao Core — install what you need, keep the kernel mi
 ## Quick start
 
 ```bash
-git clone https://github.com/Bumao-Ai/bumao-packs.git
-cd bumao-packs
+git clone https://github.com/Bumao-Ai/Bumao-packs.git
+cd Bumao-packs
 node packs/rules/basic-commit/0.1/verify.mjs
 ```
 
@@ -72,9 +72,9 @@ flowchart LR
 
 | Pack | Version | Kind | Rules | Counterexamples | Requires contract | Archive |
 |---|---|---|---|---|---|---|
-| `basic-repo` | `0.1` | rules | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip) |
-| `basic-commit` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
-| `basic-delivery` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
+| `basic-repo` | `0.1` | rules | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1/basic-repo-0.1.zip) |
+| `basic-commit` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
+| `basic-delivery` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
 
 `index.json` is the machine-readable catalog: pack id, version, contract, download URL, SHA-256 and size.
 
@@ -142,8 +142,8 @@ bumao-packs/
 ## 快速开始
 
 ```bash
-git clone https://github.com/Bumao-Ai/bumao-packs.git
-cd bumao-packs
+git clone https://github.com/Bumao-Ai/Bumao-packs.git
+cd Bumao-packs
 node packs/rules/basic-commit/0.1/verify.mjs
 ```
 
@@ -174,9 +174,9 @@ node packs/rules/basic-commit/0.1/verify.mjs
 
 | 包 | 版本 | 类型 | 规则数 | 反例数 | 依赖契约 | 下载 |
 |---|---|---|---|---|---|---|
-| `basic-repo` | `0.1` | 规则 | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip) |
-| `basic-commit` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
-| `basic-delivery` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
+| `basic-repo` | `0.1` | 规则 | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1/basic-repo-0.1.zip) |
+| `basic-commit` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip) |
+| `basic-delivery` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip) |
 
 `index.json` 是给机器读的目录：包名、版本、依赖契约、下载地址、SHA-256 与体积。
 
