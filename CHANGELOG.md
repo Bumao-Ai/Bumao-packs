@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.2 — 2026-11-09
+
+English
+
+- **Repository-wide release `v0.1.2`.** The tag version tracks documentation and catalog changes; pack contents remain at `0.1`.
+- **Bilingual docs completed.** `CONTRIBUTING.md`, `NOTICE` and `SECURITY.md` now carry the full English section alongside the existing Chinese text.
+- **Catalog and README links point at this release.** `index.json` and both README pack tables now use `releases/download/v0.1.2/`, so a download from the documentation resolves to the archives attached to this tag.
+- **Measured facts refreshed.** README commit count, last-commit date and release list now match the repository at `v0.1.2`.
+- **Pack archives are unchanged.** All three zips are byte-identical to `v0.1.1` — same SHA-256 (`5751aac1…`, `d9123ee5…`, `04e78143…`) and same sizes (18,762 / 13,703 / 14,108 B). No rule, check or contract behaviour changed.
+
+Verify: `node packs/rules/<pack>/0.1/verify.mjs` → `RESULT: PASS` (14/14, 10/10, 10/10); `sha256sum -c dist/SHA256SUMS` → all OK.
+
+中文
+
+- **整仓发行版 `v0.1.2`。** tag 版本随文档与目录更新，包内容仍为 `0.1`。
+- **双语文档补齐。** `CONTRIBUTING.md`、`NOTICE`、`SECURITY.md` 在原有中文之后补齐完整英文段落。
+- **目录与 README 链接指向本版。** `index.json` 与中英文 README 的包清单统一改为 `releases/download/v0.1.2/`，从文档点下载即落到本 tag 所附资产。
+- **实测数字刷新。** README 的提交次数、最近提交日期、发布列表与 `v0.1.2` 处的仓库状态一致。
+- **包压缩件未变。** 三个 zip 与 `v0.1.1` 逐字节相同，SHA-256 一致（`5751aac1…`、`d9123ee5…`、`04e78143…`），体积一致（18,762／13,703／14,108 B）；规则、检查项与契约行为均未改动。
+
+验证：`node packs/rules/<包名>/0.1/verify.mjs` → `RESULT: PASS`（14/14、10/10、10/10）；`sha256sum -c dist/SHA256SUMS` → 全部 OK。
+
 ## 0.1.1 — 2026-11-09
 
 English
