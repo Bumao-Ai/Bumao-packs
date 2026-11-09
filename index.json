@@ -1,6 +1,6 @@
 {
   "schema": "bumao.pack-index/v1",
-  "updated_at": "2026-11-08",
+  "updated_at": "2026-11-09",
   "packs": [
     {
       "pack_id": "basic-repo",
@@ -9,9 +9,9 @@
       "kind": "rules",
       "requires_contract": "bumao.rule-pack/v1",
       "source_path": "packs/rules/basic-repo/0.1",
-      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1/basic-repo-0.1.zip",
-      "sha256": "4c679ac96b1e8872b1e96d41b1dc0688c14e57ce949fb927b95fe5880f9324b6",
-      "size_bytes": 18744,
+      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1.1/basic-repo-0.1.zip",
+      "sha256": "5751aac1606da09b8df49b11d92552c0f471e5eaca006d293c82f5e42600f387",
+      "size_bytes": 18762,
       "rule_count": 14,
       "counterexample_count": 14,
       "license": "Apache-2.0"
@@ -23,9 +23,9 @@
       "kind": "rules",
       "requires_contract": "bumao.rule-pack/v1",
       "source_path": "packs/rules/basic-commit/0.1",
-      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-commit-0.1/basic-commit-0.1.zip",
-      "sha256": "e90b1adaf93e45e1e5014ba26f87bca816ebb13f0d7e530efc0d68541ef9ace3",
-      "size_bytes": 13701,
+      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1.1/basic-commit-0.1.zip",
+      "sha256": "d9123ee59b9bd6ae23be1419ab4b983ac09eea774d83b7598432e9e4a2dcc7ea",
+      "size_bytes": 13703,
       "rule_count": 10,
       "counterexample_count": 10,
       "license": "Apache-2.0"
@@ -37,9 +37,9 @@
       "kind": "rules",
       "requires_contract": "bumao.rule-pack/v1",
       "source_path": "packs/rules/basic-delivery/0.1",
-      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/basic-delivery-0.1/basic-delivery-0.1.zip",
-      "sha256": "f7d085b2657b3b185d99a8e16926b31ae518be3e26123edff81edf687e0a71f2",
-      "size_bytes": 14109,
+      "download_url": "https://github.com/Bumao-Ai/bumao-packs/releases/download/v0.1.1/basic-delivery-0.1.zip",
+      "sha256": "04e781431ff268e5a6c06603b34395aa01253b69fa237f6df1e510466bde12fc",
+      "size_bytes": 14108,
       "rule_count": 10,
       "counterexample_count": 10,
       "license": "Apache-2.0"

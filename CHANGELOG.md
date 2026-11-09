@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased — 2026-11-08
+## 0.1.1 — 2026-11-09
 
 English
 
@@ -9,6 +9,7 @@ English
 - **Line endings pinned.** New `.gitattributes` (`* text=auto eol=lf`, `*.bat text eol=crlf`); the CRLF working-tree conversion that caused the false baseline failure no longer applies.
 - **README rebuilt** to the same 11-section structure as the four main repositories, with measured values and a real terminal screenshot.
 - **Missing repository files added:** `CHANGELOG.md`, `CONTRIBUTING.md`, `TRADEMARK.md`, `DCO`.
+- **Pack archives rebuilt for this release.** All three `manifest.json` files changed (`license` `MIT` → `Apache-2.0`), and `basic-delivery`'s `_baseline/SHA256SUMS` lost its trailing newline, so every pack zip is republished under `v0.1.1`; `index.json` `download_url` / `sha256` / `size_bytes` were updated accordingly (basic-repo 18,744 → 18,762 B, basic-commit 13,701 → 13,703 B, basic-delivery 14,109 → 14,108 B). The `v0.1`, `basic-commit-0.1` and `basic-delivery-0.1` releases remain in place, untouched.
 
 No rule, check or contract behaviour changed. `packs/rules/*/0.1/rules/*.json` is untouched.
 
@@ -19,6 +20,7 @@ No rule, check or contract behaviour changed. `packs/rules/*/0.1/rules/*.json` i
 - **行尾固定。** 新增 `.gitattributes`（`* text=auto eol=lf`、`*.bat text eol=crlf`），消除 CRLF 工作区转换造成的基线误报。
 - **README 重建**为与四主仓相同的 11 节结构，数字均实测，配真实终端截图。
 - **补齐仓内必备文件：** `CHANGELOG.md`、`CONTRIBUTING.md`、`TRADEMARK.md`、`DCO`。
+- **本版重打并重发三个包的压缩件。** 三个 `manifest.json` 均有改动（`license` `MIT` → `Apache-2.0`），`basic-delivery` 的 `_baseline/SHA256SUMS` 去掉行尾换行，因此三个包全部在 `v0.1.1` 重发；`index.json` 的 `download_url`／`sha256`／`size_bytes` 同步更新（basic-repo 18,744 → 18,762 B，basic-commit 13,701 → 13,703 B，basic-delivery 14,109 → 14,108 B）。原 `v0.1`、`basic-commit-0.1`、`basic-delivery-0.1` 三个 Release 原样保留，未删除、未替换资产。
 
 未改动任何规则、检查项或契约行为；`packs/rules/*/0.1/rules/*.json` 保持原样。
 
