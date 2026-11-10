@@ -4,6 +4,7 @@
 ![packs](https://img.shields.io/badge/packs-3-brightgreen)
 ![rules](https://img.shields.io/badge/rules-34-brightgreen)
 ![verify](https://img.shields.io/badge/counterexamples-34%2F34%20red-brightgreen)
+[![XERJ Corpus Hub contributor](https://hub.xerj.org/contributors/Bumao-Ai/badge.svg)](https://hub.xerj.org/contributors/Bumao-Ai)
 
 **English**
 
