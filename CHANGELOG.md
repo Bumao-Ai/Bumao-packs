@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.3 — 2026-11-11
+
+English
+
+- **Repository-wide release `v0.1.3`.** The tag version tracks documentation and catalog changes; pack contents remain at `0.1`.
+- **`basic-repo` counterexample baseline is now Apache-2.0.** `counterexamples/_baseline/LICENSE` carries the Apache-2.0 text (11,339 B, appendix filled as `Copyright 2026 Bumao-Ai`) in place of the former MIT text, and `_baseline/README.md` declares `Apache-2.0`. No file in the repository is offered under MIT any more.
+- **The licence-mismatch counterexample was inverted, not weakened.** `license-file-matches` now replaces LICENSE with MIT text while README keeps declaring Apache-2.0, so the mismatch still fires; its `expect_fail` is unchanged. MIT text therefore survives only as that case's mutation payload — test data, not a licence grant. `license-declared`'s setup wording follows the new baseline. No rule file, threshold, detector or `expect_fail` was edited.
+- **`basic-repo` archive rebuilt.** SHA-256 `a252f2db…`, 22,597 B (was `5751aac1…`, 18,762 B). `basic-commit` and `basic-delivery` are byte-identical to `v0.1.2` (`d9123ee5…` 13,703 B and `04e78143…` 14,108 B). All three are re-attached to this tag and `index.json` points at `v0.1.3`.
+- **Measured facts refreshed.** README commit count, last-commit date and release list now match the repository at `v0.1.3`.
+
+Verify: `node packs/rules/<pack>/0.1/verify.mjs` → `RESULT: PASS` (14/14, 10/10, 10/10); the rebuilt `basic-repo-0.1.zip` was extracted into a clean directory and re-verified → `RESULT: PASS` (14/14, baseline clean); `sha256sum -c dist/SHA256SUMS` → all OK.
+
+中文
+
+- **整仓发行版 `v0.1.3`。** tag 版本随文档与目录更新，包内容仍为 `0.1`。
+- **`basic-repo` 反例基线改为 Apache-2.0。** `counterexamples/_baseline/LICENSE` 由原 MIT 正文换成 Apache-2.0 正文（11,339 B，附录填 `Copyright 2026 Bumao-Ai`），`_baseline/README.md` 的声明行同步改为 `Apache-2.0`。仓内不再有任何以 MIT 授出的文件。
+- **许可不一致反例是反向，不是削弱。** `license-file-matches` 改为「把 LICENSE 换成 MIT 正文、README 仍声明 Apache-2.0」，不一致照样触发，`expect_fail` 一字未动。MIT 正文因此只作为该用例的 mutation 载荷存在——是测试数据，不是许可授予。`license-declared` 的 setup 文案随基线更新。规则文件、阈值、检测器与 `expect_fail` 均未改动。
+- **`basic-repo` 压缩件重打。** SHA-256 `a252f2db…`，22,597 B（原 `5751aac1…`，18,762 B）。`basic-commit` 与 `basic-delivery` 与 `v0.1.2` 逐字节相同（`d9123ee5…` 13,703 B、`04e78143…` 14,108 B）。三个包一并挂到本 tag，`index.json` 指向 `v0.1.3`。
+- **实测数字刷新。** README 的提交次数、最近提交日期、发布列表与 `v0.1.3` 处的仓库状态一致。
+
+验证：`node packs/rules/<包名>/0.1/verify.mjs` → `RESULT: PASS`（14/14、10/10、10/10）；重打的 `basic-repo-0.1.zip` 解包到干净目录复跑 → `RESULT: PASS`（14/14，基线干净）；`sha256sum -c dist/SHA256SUMS` → 全部 OK。
+
 ## 0.1.2 — 2026-11-09
 
 English

@@ -15,4 +15,4 @@ The entry point is `src/app.py`.
 
 ## License
 
-MIT
+Apache-2.0

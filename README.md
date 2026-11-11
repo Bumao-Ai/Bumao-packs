@@ -40,16 +40,16 @@ No Node package install is needed: `verify.mjs` uses Node built-ins only (Node 1
 
 | Item | Value | Source |
 |---|---|---|
-| Commits | 11 (at tag `v0.1.2`) | `git rev-list --count v0.1.2` |
-| Last commit | 2026-11-09 | `git log -1 --date=short` |
+| Commits | 14 (at tag `v0.1.3`) | `git rev-list --count v0.1.3` |
+| Last commit | 2026-11-11 | `git log -1 --date=short` |
 | Packs | 3 | `index.json` |
 | Rules | 34 (14 / 10 / 10) | `packs/rules/*/0.1/rules/*.json` |
 | Counterexamples | 34 (14 / 10 / 10) | `packs/rules/*/0.1/counterexamples/*/` |
 | Self-check | 3/3 `RESULT: PASS` | `node packs/rules/<pack>/0.1/verify.mjs` |
-| Releases | 5 tags, latest `v0.1.2` (2026-11-09) | `git tag --list` |
+| Releases | 6 tags, latest `v0.1.3` (2026-11-11) | `git tag --list` |
 | Changelog | [CHANGELOG.md](CHANGELOG.md) | — |
 
-**Repository release:** `v0.1.2` (2026-11-09). Pack contents stay at `0.1`; the repo-wide tag version tracks documentation and catalog changes. The pack archives attached to `v0.1.2` are byte-identical to `v0.1.1` (same SHA-256).
+**Repository release:** `v0.1.3` (2026-11-11). Pack contents stay at `0.1`; the repo-wide tag version tracks documentation and catalog changes. The `basic-repo` archive was rebuilt for this tag (SHA-256 `a252f2db…`, 22,597 B); `basic-commit` and `basic-delivery` are byte-identical to `v0.1.2`.
 
 ## Roadmap (0.2 — in progress)
 
@@ -73,9 +73,9 @@ flowchart LR
 
 | Pack | Version | Kind | Rules | Counterexamples | Requires contract | Archive |
 |---|---|---|---|---|---|---|
-| `basic-repo` | `0.1` | rules | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.2/basic-repo-0.1.zip) |
-| `basic-commit` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.2/basic-commit-0.1.zip) |
-| `basic-delivery` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.2/basic-delivery-0.1.zip) |
+| `basic-repo` | `0.1` | rules | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.3/basic-repo-0.1.zip) |
+| `basic-commit` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.3/basic-commit-0.1.zip) |
+| `basic-delivery` | `0.1` | rules | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.3/basic-delivery-0.1.zip) |
 
 `index.json` is the machine-readable catalog: pack id, version, contract, download URL, SHA-256 and size.
 
@@ -154,16 +154,16 @@ node packs/rules/basic-commit/0.1/verify.mjs
 
 | 项 | 实测值 | 取值来源 |
 |---|---|---|
-| 提交次数 | 11（截至 tag `v0.1.2`） | `git rev-list --count v0.1.2` |
-| 最近提交 | 2026-11-09 | `git log -1 --date=short` |
+| 提交次数 | 14（截至 tag `v0.1.3`） | `git rev-list --count v0.1.3` |
+| 最近提交 | 2026-11-11 | `git log -1 --date=short` |
 | 包数 | 3 | `index.json` |
 | 规则数 | 34（14／10／10） | `packs/rules/*/0.1/rules/*.json` |
 | 反例数 | 34（14／10／10） | `packs/rules/*/0.1/counterexamples/*/` |
 | 自检 | 3/3 `RESULT: PASS` | `node packs/rules/<pack>/0.1/verify.mjs` |
-| 发布节奏 | 5 个 tag，最新 `v0.1.2`（2026-11-09） | `git tag --list` |
+| 发布节奏 | 6 个 tag，最新 `v0.1.3`（2026-11-11） | `git tag --list` |
 | 变更记录 | [CHANGELOG.md](CHANGELOG.md) | — |
 
-**整仓发行版：** `v0.1.2`（2026-11-09）。包内容仍为 `0.1`，整仓 tag 版本随文档与目录更新；`v0.1.2` 所附三个包压缩件与 `v0.1.1` 逐字节相同（SHA-256 一致）。
+**整仓发行版：** `v0.1.3`（2026-11-11）。包内容仍为 `0.1`，整仓 tag 版本随文档与目录更新；`basic-repo` 压缩件为本版重打（SHA-256 `a252f2db…`，22,597 B），`basic-commit` 与 `basic-delivery` 与 `v0.1.2` 逐字节相同。
 
 ## Roadmap（0.2 — 进行中）
 
@@ -175,9 +175,9 @@ node packs/rules/basic-commit/0.1/verify.mjs
 
 | 包 | 版本 | 类型 | 规则数 | 反例数 | 依赖契约 | 下载 |
 |---|---|---|---|---|---|---|
-| `basic-repo` | `0.1` | 规则 | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.2/basic-repo-0.1.zip) |
-| `basic-commit` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.2/basic-commit-0.1.zip) |
-| `basic-delivery` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.2/basic-delivery-0.1.zip) |
+| `basic-repo` | `0.1` | 规则 | 14 | 14 | `bumao.rule-pack/v1` | [basic-repo-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.3/basic-repo-0.1.zip) |
+| `basic-commit` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-commit-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.3/basic-commit-0.1.zip) |
+| `basic-delivery` | `0.1` | 规则 | 10 | 10 | `bumao.rule-pack/v1` | [basic-delivery-0.1.zip](https://github.com/Bumao-Ai/Bumao-packs/releases/download/v0.1.3/basic-delivery-0.1.zip) |
 
 `index.json` 是给机器读的目录：包名、版本、依赖契约、下载地址、SHA-256 与体积。
 
